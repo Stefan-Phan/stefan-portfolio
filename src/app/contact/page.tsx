@@ -2,15 +2,16 @@ import Head from "next/head";
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import ResumeDisplay from "../components/Resume";
+import ProfileSection from "../components/ProfileSection";
+import ContactForm from "../components/Contact";
 
-export default function Resume() {
+export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
 
       <main className="flex-grow flex flex-col items-center justify-center px-4">
-        <ResumeDisplay />
+        <ContactForm />
       </main>
 
       <Footer />

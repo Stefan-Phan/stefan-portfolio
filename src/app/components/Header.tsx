@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="py-6 px-4 flex justify-between items-center">
       <div className="flex items-center">
-        <div className="h-6 w-6 bg-yellow-500 rounded-full mr-3"></div>
+        <div className="h-6 w-6 bg-red-500 rounded-full mr-3"></div>
         <h1 className="text-black font-bold text-xl md:text-2xl">
           {" "}
           {/* Responsive font size */}
