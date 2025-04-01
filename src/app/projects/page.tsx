@@ -1,31 +1,37 @@
-import Head from "next/head";
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Project from "../components/Project";
 
 export default function Projects() {
-  const projects = [
+  const ownProjects = [
     {
-      title: "SmartSaver",
+      name: "SmartSaver",
+      tool: "NodeJS, ExpressJS, ReactJS, MySQL, GeminiAPI",
       description:
-        "Developed an AI-powered money tracking app leveraging Gemini API to provide personalized financial recommendations in diverse tones, implemented a robust backend with 20+ APIs using Express.js, Node.js, and MySQL including secure password hashing, and designed a React frontend featuring 5+ financial diagrams for clear visualization of spending and savings.",
-      imageUrl: "/images/project1.jpg",
-      imageAlt: "Project 1 Image",
+        "An AI-powered money tracking app providing financial recommendations using Gemini AI, with a backend built in Express.js and MySQL, featuring secure authentication, extensive API support, and financial visualizations.",
+      github: "https://github.com/Stefan-Phan/SmartSaver",
     },
     {
-      title: "Little Lemon",
+      name: "LittleLemon",
+      tool: "Django Rest FrameWork, JWT, RESTful API",
       description:
-        "Constructed a comprehensive RESTful API using Django Rest Framework, featuring 20+ endpoints for menu management, user authentication, and order processing, integrated JSON Web Token (JWT) for secure user authentication and implemented role-based access control for 5+ user groups, and optimized data retrieval with pagination and filtering, resulting in a 40% improvement in response times for large datasets.",
-      imageUrl: "/images/project1.jpg",
-      imageAlt: "Project 1 Image",
+        "A RESTful API for menu management and user authentication, built with Django Rest Framework, featuring JWT-based authentication, role-based access control, and optimized data handling for improved performance.",
+      github: "https://github.com/Stefan-Phan/LittleLemon_API",
     },
     {
-      title: "GameHub",
+      name: "GameHub",
+      tool: "Django, SQLite, ZEGOCLOUD, React, Socket.io",
       description:
-        "Engineered a forum-based platform enabling real-time gamer discussions across 100+ categories using Django and SQLite, implemented seamless real-time chat via Socket.io, integrated ZEGOCLOUD for concurrent live discussions supporting global users, and developed a secure user authentication and authorization system to ensure controlled access to forums and chat functionalities.",
-      imageUrl: "/images/project1.jpg",
-      imageAlt: "Project 1 Image",
+        "A forum-based platform for gamers with real-time chat and live discussions, integrating ZEGOCLOUD for global connectivity and a secure authentication system to ensure a seamless and interactive experience.",
+      github: "https://github.com/Stefan-Phan/GameHub",
+    },
+    {
+      name: "GMPS",
+      tool: "NodeJS, MongoDB, ExpressJS, JWT",
+      description:
+        "The General Medical Practice System (GMPS) is a comprehensive backend solution designed to streamline the management of medical practices. Built with Node.js, Express.js, and MongoDB, this system provides a robust API for handling patient bookings, doctor information, and administrative tasks.",
+      github: "https://github.com/Stefan-Phan/GMPS",
     },
   ];
 
@@ -33,14 +39,44 @@ export default function Projects() {
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-grow flex flex-col items-center justify-center px-4">
-        <div className="container mx-auto px-4 items-center flex flex-col max-w-3xl">
-          {" "}
-          {/* Add max-w-3xl */}
-          {projects.map((project, index) => (
-            <Project key={index} {...project} />
-          ))}
-        </div>
+      <main className="flex-grow container mx-auto px-4 py-8 max-w-3xl">
+        <h1 className="text-4xl font-bold mb-8">Projects</h1>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Open Source</h2>
+          <p className="mb-17">
+            Here are some of the open-source projects I have created and
+            maintained. Each project showcases my passion for building useful
+            tools and integrations, as well as my commitment to the open-source
+            community. From API libraries to smart home integrations, these
+            projects are designed to help solve real-world problems while also
+            allowing others to contribute, learn, and build upon them. Feel free
+            to explore each project and check out the code or contribute if
+            you're interested!
+          </p>
+
+          <div className="space-y-6">
+            {ownProjects.map((project, index) => (
+              <div key={index} className="border-b border-gray-300 pb-6">
+                <div className="flex justify-between items-start">
+                  <h3 className="text-2xl font-semibold">{project.name}</h3>
+                  <div className="flex items-center">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-600"
+                    >
+                      <FaGithub size={24} />
+                    </a>
+                  </div>
+                </div>
+                <p className="text-gray-600">{project.tool}</p>
+                <p className="mt-2">{project.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
 
       <Footer />
