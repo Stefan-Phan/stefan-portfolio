@@ -6,15 +6,17 @@ export default function Header() {
     <header className="py-6 px-4 flex justify-between items-center">
       <div className="flex items-center">
         <div className="h-6 w-6 bg-red-500 rounded-full mr-3"></div>
-        <h1 className="text-black font-bold text-xl md:text-2xl">
-          {" "}
-          {/* Responsive font size */}
-          Stefan Phan
-          <span className="text-gray-500 font-normal text-base">
+        <Link href="/">
+          <h1 className="text-black font-bold text-xl md:text-2xl">
             {" "}
-            | Software Engineer
-          </span>
-        </h1>
+            {/* Responsive font size */}
+            Stefan Phan
+            <span className="text-gray-500 font-normal text-base">
+              {" "}
+              | Software Engineer
+            </span>
+          </h1>
+        </Link>
       </div>
       <button className="text-2xl md:hidden">☰</button>{" "}
       {/* Hamburger menu (hidden on medium+ screens) */}

@@ -1,4 +1,4 @@
-import Image from "next/image"; // Import the Image component
+import Image from "next/image";
 import resume from "../public/images/resume.png";
 
 export default function ResumeDisplay() {
